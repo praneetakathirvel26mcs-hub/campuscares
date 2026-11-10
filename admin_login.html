@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Admin Login{% endblock %}{% block content %}
+<section class="page-head"><p class="eyebrow">Restricted access</p><h1>Administrator login</h1><p>Only the administrator can access submitted reports and export data.</p></section>
+<form class="form-card compact" method="post"><label>Username<input name="username" required autocomplete="username"></label><label>Password<input type="password" name="password" required autocomplete="current-password"></label><button class="button" type="submit">Log in →</button></form>
+<p class="small-note">Configure your own username and password in the terminal before starting the app. No default admin password is enabled.</p>{% endblock %}

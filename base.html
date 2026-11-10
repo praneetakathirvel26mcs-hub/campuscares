@@ -1,0 +1,6 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}CampusCare{% endblock %}</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><header class="topbar"><a class="brand" href="{{ url_for('index') }}">Campus<span>Care</span></a><nav>
+<a href="{{ url_for('index') }}">Home</a><a href="{{ url_for('track') }}">Track Complaint</a>
+{% if session.get('is_admin') %}<a href="{{ url_for('admin') }}">Admin Dashboard</a><a href="{{ url_for('admin_logout') }}">Logout</a>{% elif session.get('is_maintenance') %}<a href="{{ url_for('maintenance_dashboard') }}">Maintenance Dashboard</a><a href="{{ url_for('maintenance_logout') }}">Logout</a>{% else %}<a href="{{ url_for('admin_login') }}">Admin Login</a><a href="{{ url_for('maintenance_login') }}">Maintenance Login</a>{% endif %}
+</nav></header><main class="container">{% with messages=get_flashed_messages(with_categories=true) %}{% if messages %}{% for kind,message in messages %}<div class="flash {{ kind }}">{{ message }}</div>{% endfor %}{% endif %}{% endwith %}{% block content %}{% endblock %}</main><footer>CampusCare · Campus Complaint Management System</footer></body></html>

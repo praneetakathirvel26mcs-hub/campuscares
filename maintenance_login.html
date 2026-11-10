@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Maintenance Login{% endblock %}{% block content %}
+<section class="page-head"><p class="eyebrow">Authorized staff only</p><h1>Maintenance login</h1><p>Sign in to view all submitted campus complaints and update their progress.</p></section>
+<form class="form-card compact" method="post"><label>Username<input name="username" autocomplete="username" required></label><label>Password<input type="password" name="password" autocomplete="current-password" required></label><button class="button submit-button" type="submit">Sign in to dashboard</button><p class="small-note">Maintenance credentials are configured by the system administrator.</p></form>
+{% endblock %}

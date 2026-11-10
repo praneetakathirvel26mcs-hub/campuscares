@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Complaint Submitted{% endblock %}{% block content %}
+<section class="success-card"><div class="success-icon">✓</div><p class="eyebrow">Report received</p><h1>Complaint submitted!</h1><p>Save this ID to track your complaint.</p><div class="complaint-number">#{{ complaint_id }}</div>
+<div class="result-grid"><div><span>Selected category</span><strong>{{ category }}</strong></div><div><span>Department</span><strong>{{ department }}</strong></div><div><span>Priority</span><strong>{{ priority }}</strong></div></div>
+{% if email_sent %}<p class="email-success">✓ Department email notification sent.</p>{% else %}<p class="notice">Your complaint is saved, but the department email was not sent. The administrator should check the SMTP and department email settings.</p>{% endif %}
+<a class="button" href="{{ url_for('track') }}">Track Complaint</a><a class="text-link" href="{{ url_for('index') }}">Back to home</a></section>{% endblock %}

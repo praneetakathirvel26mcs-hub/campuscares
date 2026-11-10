@@ -1,0 +1,53 @@
+{
+  "dataset_rows": 400,
+  "training_rows": 300,
+  "testing_rows": 100,
+  "split": "stratified 75% train / 25% test",
+  "accuracy": 1.0,
+  "classification_report": {
+    "Electrical": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 25.0
+    },
+    "IT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 25.0
+    },
+    "Maintenance": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 25.0
+    },
+    "Sanitation": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 25.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 100.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 100.0
+    }
+  },
+  "classes": [
+    "Electrical",
+    "IT",
+    "Maintenance",
+    "Sanitation"
+  ],
+  "note": "Metrics are based on synthetic data and do not guarantee real-world accuracy. Review flagged predictions manually."
+}

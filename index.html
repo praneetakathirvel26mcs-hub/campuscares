@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block title %}CampusCare | Submit a Complaint{% endblock %}{% block content %}
+<section class="hero"><div><p class="eyebrow">Your campus. Your voice.</p><h1>Make your campus<br><span>better for everyone.</span></h1><p class="lead">Select the issue category, submit your complaint, and let the system route it to the appropriate college department.</p>
+<div class="feature-pills"><span>✓ Department routing</span><span>✓ Complaint tracking</span><span>✓ Private reports</span></div></div>
+<div class="hero-card"><div class="icon-circle">✦</div><h2>Raise a complaint</h2><p>Complete the form below. Choose the category that best matches your issue.</p><form method="post" action="{{ url_for('submit') }}" class="complaint-form">
+<label>Student name<input name="student_name" required maxlength="100" placeholder="Enter your full name"></label>
+<label>Student ID / Register number<input name="student_id" required maxlength="50" placeholder="e.g. 26MCS001"></label>
+<label>Complaint category<select name="category" required><option value="">Select a department category</option>{% for category, department in categories.items() %}<option value="{{ category }}">{{ category }} — {{ department }}</option>{% endfor %}</select></label>
+<label>Complaint title<input name="title" required maxlength="150" placeholder="Briefly describe the issue"></label>
+<label>Complaint description<textarea name="description" required rows="4" maxlength="3000" placeholder="Explain the problem clearly..."></textarea></label>
+<label>Campus location<input name="location" required maxlength="200" placeholder="e.g. Block A, second floor"></label>
+<button class="button submit-button" type="submit">Submit Complaint →</button></form></div></section>
+<section class="section-heading"><p class="eyebrow">Easy and organized</p><h2>What happens next?</h2></section>
+<section class="steps"><article class="step"><b>01</b><h3>Select category</h3><p>Choose the department category that best fits your complaint.</p></article><article class="step"><b>02</b><h3>Department notification</h3><p>The system emails the configured department inbox when email settings are enabled.</p></article><article class="step"><b>03</b><h3>Track progress</h3><p>Save your complaint ID and use it with your student ID to check the status.</p></article></section>
+<p class="privacy-note"><strong>Privacy:</strong> Only an authenticated administrator can view the complete submitted-report list and download the report. Do not enter emergency incidents here instead of contacting campus security or emergency services.</p>{% endblock %}
